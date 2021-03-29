@@ -19,12 +19,20 @@ public abstract class Character : MonoBehaviour
     protected bool doublejump = true;
     protected bool onGround;
 
-    [Header("Attack Variables")]
-    
-    [Header("Character Stats")]
+    [Header("Attack Variables")] 
+    [SerializeField] protected Transform attackCheck;
+    [SerializeField] protected float attackRange = 0.5f;
+    [SerializeField] protected LayerMask enemyLayers;
+
+    [Header("Character Stats")] 
+    [SerializeField] protected int health;
+    [SerializeField] protected int attack;
+    public bool dead = false;
     
     protected Rigidbody2D rb2d;
     protected Animator anim;
+
+    #region mono
     public virtual void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -46,7 +54,9 @@ public abstract class Character : MonoBehaviour
         HandleMovement();
         HandleLayers();
     }
+    #endregion
 
+    #region movement
     protected void Move()
     {
         rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
@@ -64,6 +74,44 @@ public abstract class Character : MonoBehaviour
             transform.localScale = new Vector2(initScale * direction, transform.localScale.y);
     }
     
+    #endregion
+
+    #region attack
+    protected void Attack()
+    {
+        anim.SetTrigger("attack");
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackCheck.position, attackRange, enemyLayers);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            Debug.Log(gameObject.name + " hit " + enemy.name);
+            enemy.GetComponent<Enemy>().TakeDamage(attack);
+        }
+    }
+
+    protected virtual void TakeDamage(int damage)
+    {
+        if (health <= 0)
+        {
+            anim.SetTrigger("hit");
+            Die();
+        }
+        else
+        {
+            health -= damage;
+            anim.SetTrigger("hit");
+        }
+    }
+
+    protected virtual void Die()
+    {
+        Debug.Log(gameObject.name + " died!");
+        anim.SetBool("dead",true);
+        GetComponent<Rigidbody2D>().gravityScale = 0;
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
+    }
+
+    #endregion
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(groundCheck.position,overlap);

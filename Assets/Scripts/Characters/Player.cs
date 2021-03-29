@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Player : Character
 {
-    private float runSpeed = 5.0f;
+    public float runSpeed = 5.0f;
     private float walkSpeed = 3.0f;
+    public int attackDamage = 25;
     public override void Start()
     {
         base.Start();
         speed = runSpeed;
+        attack = attackDamage;
     }
 
     public override void Update()
@@ -17,6 +19,10 @@ public class Player : Character
         base.Update();
         direction = Input.GetAxisRaw("Horizontal");
         Jump();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Attack();
+        }
     }
 
     protected override void HandleMovement()
