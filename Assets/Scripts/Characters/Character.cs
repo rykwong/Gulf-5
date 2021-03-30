@@ -87,12 +87,18 @@ public abstract class Character : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log(gameObject.name + " hit " + enemy.name);
-            enemy.GetComponent<Enemy>().TakeDamage(attack);
+            enemy.GetComponent<Character>().TakeDamage(attack);
         }
+    }
+
+    protected void RangedAttack()
+    {
+        
     }
 
     protected virtual void TakeDamage(int damage)
     {
+        
         if (health <= 0)
         {
             anim.SetTrigger("hit");
@@ -101,6 +107,7 @@ public abstract class Character : MonoBehaviour
         else
         {
             health -= damage;
+            Debug.Log(gameObject.name + " has " + health + " health remaining");
             anim.SetTrigger("hit");
         }
     }
