@@ -23,11 +23,13 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected Transform attackCheck;
     [SerializeField] protected float attackRange = 0.5f;
     [SerializeField] protected LayerMask enemyLayers;
+    [SerializeField] protected float attackRate = 2f;
+    protected float attackTime = 0f;
+    [SerializeField] protected bool dead;
 
     [Header("Character Stats")] 
     [SerializeField] protected int health;
     [SerializeField] protected int attack;
-    public bool dead = false;
     
     protected Rigidbody2D rb2d;
     protected Animator anim;
@@ -79,6 +81,7 @@ public abstract class Character : MonoBehaviour
     #region attack
     protected void Attack()
     {
+        Debug.Log(gameObject.name + " is attacking");
         anim.SetTrigger("attack");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackCheck.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemies)
@@ -109,6 +112,7 @@ public abstract class Character : MonoBehaviour
         GetComponent<Rigidbody2D>().gravityScale = 0;
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+        dead = true;
     }
 
     #endregion

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class Player : Character
 {
     public float runSpeed = 5.0f;
-    private float walkSpeed = 3.0f;
+    // private float walkSpeed = 3.0f;
     public int attackDamage = 25;
     public override void Start()
     {
@@ -19,9 +20,13 @@ public class Player : Character
         base.Update();
         direction = Input.GetAxisRaw("Horizontal");
         Jump();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Time.time >= attackTime)
         {
-            Attack();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Attack();
+                attackTime = Time.time + 1f / attackRate;
+            }
         }
     }
 
@@ -31,25 +36,38 @@ public class Player : Character
         anim.SetFloat("speed", Mathf.Abs(direction));
         Flip();
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Collectable"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
+
     protected override void Jump()
     {
         if (Input.GetButtonDown("Jump"))
         {
+            Debug.Log("Button Pressed: " + doublejump);
             if (onGround)
             {
+                Debug.Log("Ground Jump");
                 rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
-                doublejump = true;
                 anim.SetTrigger("jump");
             }
             else
             {
-                if (doublejump)
+                if(Input.GetButtonDown("Jump"))
                 {
-                    doublejump = false;
-                    rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
-                    rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
-                    anim.SetTrigger("jump");
+                    if (doublejump)
+                    {
+                        Debug.Log("Double Jump");
+                        doublejump = false;
+                        rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
+                        rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
+                        anim.SetTrigger("jump");
+                    }
                 }
             }
 
