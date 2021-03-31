@@ -9,8 +9,8 @@ public class Enemy : Character
     public int maxHealth = 100;
     public bool revive;
     public float distance;
-    private bool movingRight = true;
-    private GameObject player;
+    protected bool movingRight = true;
+    protected GameObject player;
     public override void Start()
     {
         base.Start();
@@ -25,7 +25,7 @@ public class Enemy : Character
             Patrol();
     }
 
-    private void Patrol()
+    protected virtual void Patrol()
     {
         float dist = Vector2.Distance(transform.position, player.transform.position);
         if (dist < 4f)
@@ -69,9 +69,6 @@ public class Enemy : Character
             }
             movingRight = !movingRight;
         }
-
-
-        
     }
 
     protected override void Jump() { }

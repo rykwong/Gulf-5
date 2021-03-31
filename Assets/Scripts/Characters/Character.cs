@@ -91,12 +91,7 @@ public abstract class Character : MonoBehaviour
         }
     }
 
-    protected void RangedAttack()
-    {
-        
-    }
-
-    protected virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         
         if (health <= 0)
