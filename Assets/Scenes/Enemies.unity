@@ -1142,11 +1142,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   attackRate: 2
+  timeShots: 0
+  initTime: 0
+  projectile: {fileID: 0}
   dead: 0
   health: 100
   attack: 0
   runSpeed: 5
   attackDamage: 25
+  objectLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  dir: 0
 --- !u!70 &751754926
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1505,6 +1512,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   attackRate: 1
+  timeShots: 0
+  initTime: 0
+  projectile: {fileID: 0}
   dead: 0
   health: 0
   attack: 0
