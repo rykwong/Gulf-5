@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public float speed = 15f;
     public int damage = 10;
@@ -15,24 +15,13 @@ public class Projectile : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player").transform;
-        if (transform.position.x < player.position.x)
-        {
+        if (player.GetComponent<Player>().dir >= 0)
+        { 
             rb2d.velocity = Vector2.right * speed;
         }
-        else if(transform.position.x > player.position.x)
-        {
+        else 
+        { 
             rb2d.velocity = Vector2.left * speed;
-        }
-        else
-        {
-            if (player.GetComponent<Player>().dir > 0)
-            {
-                rb2d.velocity = Vector2.right * speed;
-            }
-            else
-            {
-                rb2d.velocity = Vector2.left * speed;
-            }
         }
     }
 
@@ -50,9 +39,14 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<Player>().TakeDamage(damage);
+            other.GetComponent<Enemy>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+        else if (other.CompareTag("Destructible"))
+        {
+            other.GetComponent<DestructibleItem>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

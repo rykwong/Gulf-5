@@ -10,6 +10,7 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected float speed = 1.0f;
     [SerializeField] protected float direction;
     protected float initScale;
+    protected float curDirection;
 
     [Header("Jump Variables")]
     [SerializeField] protected Transform groundCheck;
@@ -24,6 +25,9 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected float attackRange = 0.5f;
     [SerializeField] protected LayerMask enemyLayers;
     [SerializeField] protected float attackRate = 2f;
+    [SerializeField] protected float timeShots;
+    [SerializeField] protected float initTime;
+    [SerializeField] protected GameObject projectile;
     protected float attackTime = 0f;
     [SerializeField] protected bool dead;
 
@@ -72,16 +76,17 @@ public abstract class Character : MonoBehaviour
 
     protected void Flip()
     {
-        if(direction != 0)
+        if(direction != 0){
             transform.localScale = new Vector2(initScale * direction, transform.localScale.y);
+            curDirection = direction;
+        }
     }
     
     #endregion
 
     #region attack
-    protected void Attack()
+    protected virtual void Attack()
     {
-        Debug.Log(gameObject.name + " is attacking");
         anim.SetTrigger("attack");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackCheck.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemies)
@@ -91,24 +96,15 @@ public abstract class Character : MonoBehaviour
         }
     }
 
-    protected void RangedAttack()
+    public virtual void TakeDamage(int damage)
     {
-        
-    }
-
-    protected virtual void TakeDamage(int damage)
-    {
-        
+        health -= damage;
+        anim.SetTrigger("hit");
+        Debug.Log(gameObject.name + " has " + health + " remaining");
         if (health <= 0)
         {
             anim.SetTrigger("hit");
             Die();
-        }
-        else
-        {
-            health -= damage;
-            Debug.Log(gameObject.name + " has " + health + " health remaining");
-            anim.SetTrigger("hit");
         }
     }
 

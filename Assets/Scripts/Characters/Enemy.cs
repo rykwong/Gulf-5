@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-    // Start is called before the first frame update
+    [Header("Enemy Variables")]
     public int maxHealth = 100;
     public bool revive;
     public float distance;
-    private bool movingRight = true;
-    private GameObject player;
+    protected bool movingRight = true;
+    protected GameObject player;
     public override void Start()
     {
         base.Start();
@@ -25,7 +25,7 @@ public class Enemy : Character
             Patrol();
     }
 
-    private void Patrol()
+    protected virtual void Patrol()
     {
         float dist = Vector2.Distance(transform.position, player.transform.position);
         if (dist < 4f)
@@ -45,7 +45,7 @@ public class Enemy : Character
                 Attack();
                 attackTime = Time.time + 1f / attackRate;
             }
-            else if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Player_Attack"))
+            else if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Player_Attack") && dist > 2f)
             {
                 transform.Translate(Vector2.right * speed * Time.deltaTime); 
             }
@@ -69,35 +69,31 @@ public class Enemy : Character
             }
             movingRight = !movingRight;
         }
-
-
-        
     }
 
     protected override void Jump() { }
 
     protected override void Die()
     {
-        Debug.Log(gameObject.name + " died here!");
+        Debug.Log(gameObject.name + " died!");
         dead = true;
-        Debug.Log(dead);
         anim.SetBool("dead",true);
         GetComponent<Rigidbody2D>().gravityScale = 0;
         GetComponent<Collider2D>().enabled = false;
-        if(revive)
-            StartCoroutine(Wait(3));
+        // if(revive)
+        //     StartCoroutine(Wait(3));
     }
 
-    private IEnumerator Wait(float time)
-    {
-        yield return new WaitForSeconds(time);
-        Debug.Log("Revived");
-        anim.SetBool("dead",false);
-        GetComponent<Rigidbody2D>().gravityScale = 1;
-        GetComponent<Collider2D>().enabled = true;
-        health = maxHealth;
-        dead = false;
-    }
+    // private IEnumerator Wait(float time)
+    // {
+    //     yield return new WaitForSeconds(time);
+    //     Debug.Log("Revived");
+    //     anim.SetBool("dead",false);
+    //     GetComponent<Rigidbody2D>().gravityScale = 1;
+    //     GetComponent<Collider2D>().enabled = true;
+    //     health = maxHealth;
+    //     dead = false;
+    // }
     
     
 }
