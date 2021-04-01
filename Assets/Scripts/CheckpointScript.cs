@@ -7,20 +7,20 @@ using System;
 public class CheckpointScript : MonoBehaviour
 {
 
-    public TextMeshProUGUI uiText;
+    public GameObject uiText;
     public int index;
 
 
     void Start()
     {
-        uiText.enabled = false; 
+        uiText.GetComponent<TextMeshProUGUI>().enabled = false; 
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            uiText.enabled = true;
+            uiText.GetComponent<TextMeshProUGUI>().enabled = true;
         }
     }
 

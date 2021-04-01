@@ -7,32 +7,43 @@ using System.Reflection;
 
 public class TextDialog : MonoBehaviour
 {
-    public TextMeshProUGUI textDisplay;
-    public string[] sentences;
-    private int index;
+    private TextMeshProUGUI textDisplay;
+    public string sentence;
     public float typingSpeed;
-    public bool triggered = true;
-    public float delay;
+    private Transform player;
+    private bool triggered;
+    private bool finished;
+
+    private void Start()
+    {
+        player = GameObject.Find("Player").transform;
+        textDisplay = GetComponent<TextMeshProUGUI>();
+    }
 
     void Update()
     {
-        if (textDisplay.enabled == true && triggered == true) 
+        if (Vector2.Distance(transform.position,player.position) < 4f && !triggered)
         {
+            triggered = true;
+            finished = false;
             StartCoroutine(Type());
-            triggered = false;
-
         }
+        else if(Vector2.Distance(transform.position,player.position) > 4f && finished)
+        {
+            textDisplay.text = "";
+            triggered = false;
+        }
+        
 
         
     }
     IEnumerator Type()
     {
-        foreach(char letter in sentences[index].ToCharArray())
+        foreach(char letter in sentence.ToCharArray())
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-        yield return new WaitForSeconds(delay);
-        textDisplay.enabled = false;
+        finished = true;
     }
 }

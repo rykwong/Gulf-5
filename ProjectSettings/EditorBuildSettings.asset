@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 902cc32aadbe14726b22619d4a928974
+  - enabled: 1
+    path: Assets/Scenes/Level1BlockOut.unity
+    guid: c01dc7730f085420d848ee645c47d301
+  - enabled: 1
+    path: Assets/Scenes/TutorialBlockOut.unity
+    guid: 1d1987e66fc78451eae7479f3c96d866
   m_configObjects: {}

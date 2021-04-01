@@ -6,17 +6,18 @@ public class Tube : MonoBehaviour
 {
     [SerializeField] private GameObject target;
     [SerializeField] private bool unlocked;
-    [SerializeField] private float initTime;
+    [SerializeField] private bool levelExit;
     private GameObject player;
+    private GameObject menuManager;
     private Transform camera;
     private bool triggered = false;
-    private float time;
-    
-    
+
+
+
     void Start()
     {
         camera = GameObject.Find("Main Camera").transform;
-        time = initTime;
+        menuManager = GameObject.Find("MenuManager");
     }
 
     // Update is called once per frame
@@ -35,8 +36,15 @@ public class Tube : MonoBehaviour
     private IEnumerator transport()
     {
         yield return new WaitForSeconds(0.5f);
-        player.transform.position = target.transform.position;
-        camera.position = target.transform.position;
-        triggered = false;
+        if (levelExit)
+        {
+            menuManager.GetComponent<SceneTransitions>().LoadTransition("Level1BlockOut");
+        }
+        else
+        {
+            player.transform.position = target.transform.position;
+            camera.position = target.transform.position;
+            triggered = false;
+        }
     }
 }
