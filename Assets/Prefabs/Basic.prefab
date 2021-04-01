@@ -210,6 +210,7 @@ MonoBehaviour:
   maxHealth: 100
   revive: 0
   distance: 2
+  playerDist: 4
 --- !u!1 &4570795695709182156
 GameObject:
   m_ObjectHideFlags: 0

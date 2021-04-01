@@ -21,8 +21,6 @@ public class CheckpointScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             uiText.enabled = true;
-            
-
         }
     }
 

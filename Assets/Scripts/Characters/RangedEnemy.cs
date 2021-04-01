@@ -13,7 +13,7 @@ public class RangedEnemy : Enemy
     protected override void Patrol()
     {
         float dist = Vector2.Distance(transform.position, player.transform.position);
-        if (dist < 5f)
+        if (dist < playerDist)
         {
             if (transform.position.x > player.transform.position.x)
             {

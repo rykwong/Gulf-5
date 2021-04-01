@@ -11,6 +11,8 @@ public class Enemy : Character
     public float distance;
     protected bool movingRight = true;
     protected GameObject player;
+
+    [SerializeField] protected float playerDist;
     public override void Start()
     {
         base.Start();
@@ -28,7 +30,7 @@ public class Enemy : Character
     protected virtual void Patrol()
     {
         float dist = Vector2.Distance(transform.position, player.transform.position);
-        if (dist < 4f)
+        if (dist < playerDist)
         {
             if (transform.position.x > player.transform.position.x)
             {
