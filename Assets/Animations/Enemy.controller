@@ -72,7 +72,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8188f5fc5765e4bd58bf8b4e28a291b5, type: 2}
+  m_Motion: {fileID: 7400000, guid: a1e5e4b82c8dc46e1a65dec5edab6f84, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -178,7 +178,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: beed37866765f4c67b78cafdca64e122, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9fae6016d67324839bc80173b4af3901, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -205,7 +205,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2a8520fccf20c4592948b2e3c234cb77, type: 2}
+  m_Motion: {fileID: 7400000, guid: 294ea04e379314b41a72c11d6c2a396d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -232,7 +232,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: beed37866765f4c67b78cafdca64e122, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4341a38e402f047bd96a509affe3e662, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -309,7 +309,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c0d386f021e264d66ae3160cb7e900c1, type: 2}
+  m_Motion: {fileID: 7400000, guid: 50c5a5ddcbacf4438a44b32e995bcdfd, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -336,7 +336,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: beed37866765f4c67b78cafdca64e122, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2247b8f912a4145c784a4cf51de6b1f1, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -373,7 +373,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player
+  m_Name: Enemy
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: speed
