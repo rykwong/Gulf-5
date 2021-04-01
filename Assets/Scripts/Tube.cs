@@ -7,6 +7,7 @@ public class Tube : MonoBehaviour
     [SerializeField] private GameObject target;
     [SerializeField] private bool unlocked;
     [SerializeField] private bool levelExit;
+    [SerializeField] private string toLevel;
     private GameObject player;
     private GameObject menuManager;
     private Transform camera;
@@ -38,7 +39,7 @@ public class Tube : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (levelExit)
         {
-            menuManager.GetComponent<SceneTransitions>().LoadTransition("Level1BlockOut");
+            menuManager.GetComponent<SceneTransitions>().LoadTransition(toLevel);
         }
         else
         {

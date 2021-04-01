@@ -10,32 +10,38 @@ public class TextDialog : MonoBehaviour
     private TextMeshProUGUI textDisplay;
     public string sentence;
     public float typingSpeed;
-    private Transform player;
+    private GameObject player;
+    public GameObject button;
     private bool triggered;
     private bool finished;
+    public bool transition;
 
     private void Start()
     {
-        player = GameObject.Find("Player").transform;
+        player = GameObject.Find("Player");
         textDisplay = GetComponent<TextMeshProUGUI>();
+        if (transition)
+        {
+            type();
+        }
     }
 
     void Update()
     {
-        if (Vector2.Distance(transform.position,player.position) < 4f && !triggered)
+        if(player != null)
         {
-            triggered = true;
-            finished = false;
-            StartCoroutine(Type());
+            if (Vector2.Distance(transform.position, player.transform.position) < 4f && !triggered)
+            {
+                triggered = true;
+                finished = false;
+                StartCoroutine(Type());
+            }
+            else if (Vector2.Distance(transform.position, player.transform.position) > 4f && finished)
+            {
+                textDisplay.text = "";
+                triggered = false;
+            }
         }
-        else if(Vector2.Distance(transform.position,player.position) > 4f && finished)
-        {
-            textDisplay.text = "";
-            triggered = false;
-        }
-        
-
-        
     }
     IEnumerator Type()
     {
@@ -45,5 +51,15 @@ public class TextDialog : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
         finished = true;
+        if (transition)
+        {
+            button.SetActive(true);
+        }
+    }
+
+    public void type()
+    {
+        StartCoroutine(Type());
+        
     }
 }
