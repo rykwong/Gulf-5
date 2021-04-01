@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-    // Start is called before the first frame update
+    [Header("Enemy Variables")]
     public int maxHealth = 100;
     public bool revive;
     public float distance;
@@ -75,26 +75,25 @@ public class Enemy : Character
 
     protected override void Die()
     {
-        Debug.Log(gameObject.name + " died here!");
+        Debug.Log(gameObject.name + " died!");
         dead = true;
-        Debug.Log(dead);
         anim.SetBool("dead",true);
         GetComponent<Rigidbody2D>().gravityScale = 0;
         GetComponent<Collider2D>().enabled = false;
-        if(revive)
-            StartCoroutine(Wait(3));
+        // if(revive)
+        //     StartCoroutine(Wait(3));
     }
 
-    private IEnumerator Wait(float time)
-    {
-        yield return new WaitForSeconds(time);
-        Debug.Log("Revived");
-        anim.SetBool("dead",false);
-        GetComponent<Rigidbody2D>().gravityScale = 1;
-        GetComponent<Collider2D>().enabled = true;
-        health = maxHealth;
-        dead = false;
-    }
+    // private IEnumerator Wait(float time)
+    // {
+    //     yield return new WaitForSeconds(time);
+    //     Debug.Log("Revived");
+    //     anim.SetBool("dead",false);
+    //     GetComponent<Rigidbody2D>().gravityScale = 1;
+    //     GetComponent<Collider2D>().enabled = true;
+    //     health = maxHealth;
+    //     dead = false;
+    // }
     
     
 }
