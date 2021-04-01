@@ -2158,11 +2158,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   attackRate: 1
+  timeShots: 1
+  initTime: 2
+  projectile: {fileID: 6183643984694296531, guid: 2d7ae228ede1a4d8dbe862d258a60ed3,
+    type: 3}
   dead: 0
   health: 100
   attack: 0
   runSpeed: 5
   attackDamage: 25
+  objectLayers:
+    serializedVersion: 2
+    m_Bits: 1024
+  dir: 0
 --- !u!70 &751754926
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2611,7 +2619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1382713490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2638,6 +2646,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   attackRate: 2
+  timeShots: 0
+  initTime: 2
+  projectile: {fileID: 6183643984694296531, guid: dd4b266fa18d14f51893ec7698c3e650,
+    type: 3}
   dead: 0
   health: 0
   attack: 0
@@ -2646,10 +2658,6 @@ MonoBehaviour:
   distance: 2
   stoppingDistance: 20
   retreatDistance: 10
-  timeShots: 0
-  initTime: 2
-  projectile: {fileID: 6183643984694296531, guid: dd4b266fa18d14f51893ec7698c3e650,
-    type: 3}
 --- !u!95 &1382713491
 Animator:
   serializedVersion: 3
@@ -2820,7 +2828,7 @@ GameObject:
   - component: {fileID: 1525121511}
   m_Layer: 8
   m_Name: Basic
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2851,6 +2859,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   attackRate: 1
+  timeShots: 0
+  initTime: 0
+  projectile: {fileID: 0}
   dead: 0
   health: 0
   attack: 5

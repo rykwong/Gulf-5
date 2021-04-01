@@ -8,11 +8,15 @@ public class Player : Character
     public float runSpeed = 5.0f;
     // private float walkSpeed = 3.0f;
     public int attackDamage = 25;
+    [SerializeField] protected LayerMask objectLayers;
+    public float dir;
+
     public override void Start()
     {
         base.Start();
         speed = runSpeed;
         attack = attackDamage;
+        dir = 1f;
     }
 
     public override void Update()
@@ -28,6 +32,20 @@ public class Player : Character
                 attackTime = Time.time + 1f / attackRate;
             }
         }
+        if (timeShots <= 0)
+        {
+            if(Input.GetKeyDown(KeyCode.Z))
+            {
+                Instantiate(projectile, transform.position, Quaternion.identity);
+                timeShots = initTime;
+            }
+        }
+        else
+        {
+            timeShots -= Time.deltaTime;
+        }
+
+        dir = curDirection;
     }
 
     protected override void HandleMovement()
@@ -35,14 +53,6 @@ public class Player : Character
         base.HandleMovement();
         anim.SetFloat("speed", Mathf.Abs(direction));
         Flip();
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Collectable"))
-        {
-            Destroy(other.gameObject);
-        }
     }
 
     protected override void Jump()
@@ -76,6 +86,17 @@ public class Player : Character
         if (rb2d.velocity.y < 0)
         {
             anim.SetBool("falling",true);
+        }
+    }
+
+    protected override void Attack()
+    {
+        base.Attack();
+        Collider2D[] hitObjects = Physics2D.OverlapCircleAll(attackCheck.position, attackRange, objectLayers);
+        foreach (Collider2D temp in hitObjects)
+        {
+            Debug.Log(gameObject.name + " hit " + temp.name);
+            temp.GetComponent<DestructibleItem>().TakeDamage(attack);
         }
     }
 }

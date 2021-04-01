@@ -45,7 +45,7 @@ public class Enemy : Character
                 Attack();
                 attackTime = Time.time + 1f / attackRate;
             }
-            else if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Player_Attack"))
+            else if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Player_Attack") && dist > 2f)
             {
                 transform.Translate(Vector2.right * speed * Time.deltaTime); 
             }

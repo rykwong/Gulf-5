@@ -7,12 +7,7 @@ public class RangedEnemy : Enemy
 
     [SerializeField] private float stoppingDistance;
     [SerializeField] private float retreatDistance;
-
-    [SerializeField] private float timeShots;
-    [SerializeField] private float initTime;
-
-    [SerializeField] private GameObject projectile;
-
+    
     public override void Start()
     {
         base.Start();
