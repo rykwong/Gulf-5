@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RangedEnemy : Enemy
-{
-
-    [SerializeField] private float stoppingDistance;
-    [SerializeField] private float retreatDistance;
-    
+{ 
     public override void Start()
     {
         base.Start();

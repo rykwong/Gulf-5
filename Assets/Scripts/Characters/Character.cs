@@ -87,7 +87,6 @@ public abstract class Character : MonoBehaviour
     #region attack
     protected virtual void Attack()
     {
-        Debug.Log(gameObject.name + " is attacking");
         anim.SetTrigger("attack");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackCheck.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemies)
@@ -99,17 +98,13 @@ public abstract class Character : MonoBehaviour
 
     public virtual void TakeDamage(int damage)
     {
-        
+        health -= damage;
+        anim.SetTrigger("hit");
+        Debug.Log(gameObject.name + " has " + health + " remaining");
         if (health <= 0)
         {
             anim.SetTrigger("hit");
             Die();
-        }
-        else
-        {
-            health -= damage;
-            Debug.Log(gameObject.name + " has " + health + " health remaining");
-            anim.SetTrigger("hit");
         }
     }
 
