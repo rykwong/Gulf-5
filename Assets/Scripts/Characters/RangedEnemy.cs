@@ -13,7 +13,11 @@ public class RangedEnemy : Enemy
     protected override void Patrol()
     {
         float dist = Vector2.Distance(transform.position, player.transform.position);
-        if (dist < playerDist)
+        RaycastHit2D playerLeft = Physics2D.Raycast(attackCheck.position, Vector2.left, playerDist,playerMask);
+        RaycastHit2D playerRight = Physics2D.Raycast(attackCheck.position, Vector2.right, playerDist,playerMask);
+        RaycastHit2D wallLeft = Physics2D.Raycast(wallCheck.position, Vector2.left, playerDist,wall);
+        RaycastHit2D wallRight = Physics2D.Raycast(wallCheck.position, Vector2.right, playerDist,wall);
+        if ((playerLeft.collider && !wallLeft.collider) || (playerRight.collider && !wallRight.collider))
         {
             if (transform.position.x > player.transform.position.x)
             {
@@ -51,7 +55,8 @@ public class RangedEnemy : Enemy
         }
         
         RaycastHit2D groundInfo = Physics2D.Raycast(groundCheck.position, Vector2.down, distance);
-        if (!groundInfo.collider)
+        bool wallCollide = Physics2D.OverlapCircle(wallCheck.position, wallDist, wall);
+        if (!groundInfo.collider || wallCollide)
         {
             if (movingRight)
             {
