@@ -1829,6 +1829,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fan Up
       objectReference: {fileID: 0}
+    - target: {fileID: 4984154572921771940, guid: a8670104cd99c4667aebbb7e810a44d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4984154572921771943, guid: a8670104cd99c4667aebbb7e810a44d1,
         type: 3}
       propertyPath: m_RootOrder
@@ -2733,6 +2738,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FanDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844922281886398560, guid: 562d23cd404084f079c33e1e6948ec50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8844922281886398563, guid: 562d23cd404084f079c33e1e6948ec50,
         type: 3}

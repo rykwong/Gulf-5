@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentence: Use the w key to jump
-  typingSpeed: 0.1
+  typingSpeed: 0.05
   button: {fileID: 0}
   transition: 0
 --- !u!1 &351175987
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentence: Use the space bar to use your melee attack
-  typingSpeed: 0.1
+  typingSpeed: 0.05
   button: {fileID: 0}
   transition: 0
 --- !u!114 &351175990
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentence: This is a pneumatic tube. use the t key to use it
-  typingSpeed: 0.1
+  typingSpeed: 0.05
   button: {fileID: 0}
   transition: 0
 --- !u!114 &844020069
@@ -4995,7 +4995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentence: Use the z key to use your ranged attack
-  typingSpeed: 0.1
+  typingSpeed: 0.05
   button: {fileID: 0}
   transition: 0
 --- !u!114 &1299138473
@@ -5220,7 +5220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentence: Hello Friend, to move around you can use the left and right arrow keys
-  typingSpeed: 0.1
+  typingSpeed: 0.05
   button: {fileID: 0}
   transition: 0
 --- !u!114 &1539495839
