@@ -9,6 +9,7 @@ public class Player : Character
     [Header("Player Variables")]
     public float runSpeed = 5.0f;
     public int attackDamage = 25;
+    public int projDamage = 10;
     [SerializeField] protected LayerMask objectLayers;
     public float dir;
 
@@ -37,7 +38,9 @@ public class Player : Character
         {
             if(Input.GetKeyDown(KeyCode.Z))
             {
-                Instantiate(projectile, transform.position, Quaternion.identity);
+                GameObject temp = Instantiate(projectile, transform.position, Quaternion.identity);
+                Debug.Log(temp);
+                temp.GetComponent<Bullet>().damage = projDamage;
                 timeShots = initTime;
             }
         }
@@ -99,5 +102,10 @@ public class Player : Character
             Debug.Log(gameObject.name + " hit " + temp.name);
             temp.GetComponent<DestructibleItem>().TakeDamage(attack);
         }
+    }
+
+    public void setAttack(int newAttack)
+    {
+        attack = newAttack;
     }
 }
