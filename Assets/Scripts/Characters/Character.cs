@@ -62,7 +62,7 @@ public abstract class Character : MonoBehaviour
     #endregion
 
     #region movement
-    protected void Move()
+    protected virtual void Move()
     {
         rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
     }
@@ -125,7 +125,7 @@ public abstract class Character : MonoBehaviour
         Gizmos.DrawSphere(groundCheck.position,overlap);
     }
 
-    private void HandleLayers()
+    protected virtual void HandleLayers()
     {
         if (!onGround)
         {

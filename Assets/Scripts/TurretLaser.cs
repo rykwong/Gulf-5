@@ -14,5 +14,9 @@ public class TurretLaser : MonoBehaviour
             other.GetComponent<Player>().TakeDamage(damage);
             Destroy(gameObject);
         }
+        else if (other.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestructibleItem : MonoBehaviour
 {
-    [SerializeField] protected int health;
+    [SerializeField] public int health;
     public void TakeDamage(int damage)
     {
         health -= damage;
