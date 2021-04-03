@@ -52,6 +52,8 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Vector3 moveDirection = other.transform.position - transform.position;
+            other.GetComponent<Rigidbody2D>().AddForce( moveDirection.normalized * 100f);
             other.GetComponent<Player>().TakeDamage(damage);
             Destroy(gameObject);
         }

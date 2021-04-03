@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 404942100}
   - component: {fileID: 404942102}
   - component: {fileID: 404942101}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.878636}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &493335481
 GameObject:
@@ -4760,7 +4760,7 @@ GameObject:
   - component: {fileID: 991429854}
   - component: {fileID: 991429856}
   - component: {fileID: 991429855}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4824,7 +4824,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.878636}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &1092090448
 GameObject:
@@ -5462,7 +5462,7 @@ GameObject:
   - component: {fileID: 1861732415}
   - component: {fileID: 1861732417}
   - component: {fileID: 1861732414}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5526,7 +5526,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.878636}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &1875043582
 GameObject:
@@ -5643,7 +5643,7 @@ GameObject:
   - component: {fileID: 1896304897}
   - component: {fileID: 1896304899}
   - component: {fileID: 1896304898}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5707,7 +5707,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.878636}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &1938075629
 GameObject:

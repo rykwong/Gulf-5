@@ -25,7 +25,7 @@ public class Tube : MonoBehaviour
     void Update()
     {
         player = GameObject.Find("Player");
-        Debug.Log("Player: " + player.transform.position + " " + gameObject.name + ": " + transform.position + "Dist: " + Vector2.Distance(player.transform.position,transform.position));
+        // Debug.Log("Player: " + player.transform.position + " " + gameObject.name + ": " + transform.position + "Dist: " + Vector2.Distance(player.transform.position,transform.position));
         if (Input.GetKeyDown(KeyCode.T) && unlocked && !triggered && Vector2.Distance(player.transform.position,transform.position) < 2f)
         {
             triggered = true;

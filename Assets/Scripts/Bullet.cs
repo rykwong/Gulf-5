@@ -41,6 +41,8 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            Vector3 moveDirection = other.transform.position - transform.position;
+            other.GetComponent<Rigidbody2D>().AddForce( moveDirection.normalized * 100f);
             other.GetComponent<Enemy>().TakeDamage(damage);
             Destroy(gameObject);
         }

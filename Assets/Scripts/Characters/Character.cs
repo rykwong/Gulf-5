@@ -91,6 +91,8 @@ public abstract class Character : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log(gameObject.name + " hit " + enemy.name);
+            Vector3 moveDirection = transform.position - enemy.transform.position;
+            GetComponent<Rigidbody2D>().AddForce( moveDirection.normalized * -1000f);
             enemy.GetComponent<Character>().TakeDamage(attack);
         }
     }

@@ -185,7 +185,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.02, y: -0.05}
-  m_Size: {x: 0.18, y: 0.35}
+  m_Size: {x: 0.18, y: 0.3}
   m_Direction: 0
 --- !u!95 &4570795695676205006
 Animator:
@@ -246,7 +246,7 @@ MonoBehaviour:
   wallDist: 0.5
   wall:
     serializedVersion: 2
-    m_Bits: 3072
+    m_Bits: 3200
   playerMask:
     serializedVersion: 2
     m_Bits: 512

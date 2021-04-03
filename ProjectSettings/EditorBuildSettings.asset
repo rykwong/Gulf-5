@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 902cc32aadbe14726b22619d4a928974
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level1BlockOut.unity
     guid: c01dc7730f085420d848ee645c47d301
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TutorialBlockOut.unity
     guid: 1d1987e66fc78451eae7479f3c96d866
   - enabled: 1
@@ -23,4 +23,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Transition T.unity
     guid: b0a06e318e0fb400a89ec69d8af005ef
+  - enabled: 1
+    path: Assets/Scenes/TutorialWithTileSet.unity
+    guid: 9253e1a03e6b34d4299c48dfcbe4259a
+  - enabled: 1
+    path: Assets/Scenes/Level1WithTileSET.unity
+    guid: 05831820af6664d7c996d9cf23e0e59c
+  - enabled: 1
+    path: Assets/Scenes/Level2WithTileSet.unity
+    guid: 77782f99f70c34b9b88a2d85c6a2fe8b
+  - enabled: 1
+    path: Assets/Scenes/Level3WithTileset.unity
+    guid: 01504a1b79c924bea97cc3c9b4f4ff0c
   m_configObjects: {}
