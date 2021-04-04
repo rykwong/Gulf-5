@@ -15,6 +15,7 @@ public class Player : Character
     public float dir;
     [SerializeField] private GameObject healthbar;
     [SerializeField] private GameObject healthbarFill;
+    private bool invulnerable;
 
     public override void Start()
     {
@@ -119,8 +120,20 @@ public class Player : Character
 
     public override void TakeDamage(int damage)
     {
-        base.TakeDamage(damage);
-        healthbar.GetComponent<Slider>().value = (float)health / 100;
-        healthbarFill.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green, (float) health / 100);
+        if(!invulnerable)
+        {
+            StartCoroutine(InvulnerableTime());
+            base.TakeDamage(damage);
+            healthbar.GetComponent<Slider>().value = (float) health / 100;
+            healthbarFill.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green, (float) health / 100);
+        }
+        
+    }
+
+    private IEnumerator InvulnerableTime()
+    {
+        invulnerable = true;
+        yield return new WaitForSeconds(1f);
+        invulnerable = false;
     }
 }
