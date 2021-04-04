@@ -488,8 +488,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6a1c005fe614d338d4c93177385917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentence: Use the w key to jump
-  typingSpeed: 0.05
+  sentence: Use the W key or the up arrow to jump. Hit it again midair to do a double
+    jump.
+  typingSpeed: 0.02
   button: {fileID: 0}
   transition: 0
 --- !u!1 &351175987
@@ -542,8 +543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6a1c005fe614d338d4c93177385917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentence: Use the space bar to use your melee attack
-  typingSpeed: 0.05
+  sentence: Use the left or right shift keys to use your melee attack on enemies.
+  typingSpeed: 0.02
   button: {fileID: 0}
   transition: 0
 --- !u!114 &351175990
@@ -1117,8 +1118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6a1c005fe614d338d4c93177385917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentence: This is a pneumatic tube. use the t key to use it
-  typingSpeed: 0.05
+  sentence: This is a pneumatic tube. While close to it, use the T key to transport
+    yourself to the next level....or maybe a secret.
+  typingSpeed: 0.02
   button: {fileID: 0}
   transition: 0
 --- !u!114 &844020069
@@ -7809,8 +7811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6a1c005fe614d338d4c93177385917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentence: Use the z key to use your ranged attack
-  typingSpeed: 0.05
+  sentence: Use the space bar to use your ranged attack on enemies.
+  typingSpeed: 0.02
   button: {fileID: 0}
   transition: 0
 --- !u!114 &1299138473
@@ -8186,8 +8188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6a1c005fe614d338d4c93177385917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentence: Hello Friend, to move around you can use the left and right arrow keys
-  typingSpeed: 0.05
+  sentence: Hi Thredd! To move around use the A/D keys or the left and right arrow
+    keys
+  typingSpeed: 0.02
   button: {fileID: 0}
   transition: 0
 --- !u!114 &1539495839
