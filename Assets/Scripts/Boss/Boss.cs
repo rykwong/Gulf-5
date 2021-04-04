@@ -18,6 +18,7 @@ public class Boss : Enemy
     [SerializeField] private GameObject[] transformers;
     [SerializeField] private GameObject levelExit;
     [SerializeField] private GameObject win;
+    [SerializeField] private GameObject audio;
 
     private Stage stage;
     private Vector2 aim;
@@ -27,6 +28,8 @@ public class Boss : Enemy
     {
         player = GameObject.Find("Player");
         stage = Stage.Stage1;
+        audio = GameObject.Find("AudioManager");
+        audio.SetActive(false);
     }
 
     private void Awake()
@@ -127,6 +130,7 @@ public class Boss : Enemy
         Debug.Log(gameObject.name + " died!");
         levelExit.GetComponent<Tube>().ToggleLock();
         win.SetActive(true);
+        audio.SetActive(true);
         Destroy(gameObject);
     }
     
