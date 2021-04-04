@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
         {
             musicLevel2.Play();
         }
-        else if (!musicLevel3.isPlaying && ActiveScene("Level3WithTileSet"))
+        else if (!musicLevel3.isPlaying && ActiveScene("Level3WithTileset"))
         {
             musicLevel3.Play();
         }
@@ -62,7 +62,7 @@ public class AudioManager : MonoBehaviour
             musicGameOver.Play();
         }
 
-        if (musicMainMenu.isPlaying && !ActiveScene("MainMenu") && !ActiveScene("Settings"))
+        if (musicMainMenu.isPlaying && !ActiveScene("MainMenu") && !ActiveScene("Settings") && !ActiveScene("TutorialWithTileSet"))
         {
             musicMainMenu.Stop();
         }
