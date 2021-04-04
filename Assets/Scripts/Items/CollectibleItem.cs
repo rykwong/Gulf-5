@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class CollectibleItem : MonoBehaviour
 {
-    [SerializeField] public float dropRate;
+    [SerializeField] private GameObject count;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player picked up: " + gameObject.name);
+            count.GetComponent<CollectCount>().IncrementCount();
             Destroy(gameObject);
         }
     }

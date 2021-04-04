@@ -8,6 +8,7 @@ public class Powerup : MonoBehaviour
     [SerializeField] private string stat;
     private Dictionary<string, int> powerup = new Dictionary<string, int>() {{"attack",35},{"ranged",20}};
     private GameObject player;
+    [SerializeField] private GameObject uiPowerUp;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class Powerup : MonoBehaviour
                 player.GetComponent<Player>().setAttack(powerup[stat]);
             else if(stat == "ranged")
                 player.GetComponent<Player>().projDamage = powerup[stat];
+            uiPowerUp.SetActive(true);
             Destroy(gameObject);
         }
     }
