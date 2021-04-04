@@ -93,6 +93,7 @@ public class Enemy : Character
         anim.SetBool("dead",true);
         GetComponent<Rigidbody2D>().gravityScale = 0;
         GetComponent<Collider2D>().enabled = false;
+        Destroy(gameObject);
         // if(revive)
         //     StartCoroutine(Wait(3));
     }
@@ -107,6 +108,20 @@ public class Enemy : Character
     //     health = maxHealth;
     //     dead = false;
     // }
-    
-    
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            if (movingRight)
+            {
+                transform.eulerAngles = new Vector3(0, -180, 0);
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            movingRight = !movingRight;
+        }
+    }
 }
