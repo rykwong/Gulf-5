@@ -174,7 +174,7 @@ MonoBehaviour:
     m_Bits: 256
   attackRate: 1
   timeShots: 1
-  initTime: 2
+  initTime: 1
   projectile: {fileID: 6183643984694296531, guid: 2d7ae228ede1a4d8dbe862d258a60ed3,
     type: 3}
   dead: 0
