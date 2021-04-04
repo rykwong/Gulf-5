@@ -43,11 +43,11 @@ public class AudioManager : MonoBehaviour
         {
             musicLevel1.Play();
         }
-        else if (!musicLevel2.isPlaying && ActiveScene("Level2WithTileSET"))
+        else if (!musicLevel2.isPlaying && ActiveScene("Level2WithTileSet"))
         {
             musicLevel2.Play();
         }
-        else if (!musicLevel3.isPlaying && ActiveScene("Level3WithTileSET"))
+        else if (!musicLevel3.isPlaying && ActiveScene("Level3WithTileSet"))
         {
             musicLevel3.Play();
         }
@@ -60,11 +60,11 @@ public class AudioManager : MonoBehaviour
         {
             musicLevel1.Stop();
         }
-        else if (musicLevel2.isPlaying && !ActiveScene("Level2WithTileSET"))
+        else if (musicLevel2.isPlaying && !ActiveScene("Level2WithTileSet"))
         {
             musicLevel2.Stop();
         }
-        else if (musicLevel3.isPlaying && !ActiveScene("Level3WithTileSET"))
+        else if (musicLevel3.isPlaying && !ActiveScene("Level3WithTileSet"))
         {
             musicLevel3.Stop();
         }
