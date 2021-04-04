@@ -35,7 +35,7 @@ public class Player : Character
         Jump();
         if(Time.time >= attackTime)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
             {
                 Attack();
                 attackTime = Time.time + 1f / attackRate;
@@ -43,7 +43,7 @@ public class Player : Character
         }
         if (timeShots <= 0)
         {
-            if(Input.GetKeyDown(KeyCode.Z))
+            if(Input.GetKeyDown(KeyCode.Space))
             {
                 GameObject temp = Instantiate(projectile, transform.position, Quaternion.identity);
                 Debug.Log(temp);

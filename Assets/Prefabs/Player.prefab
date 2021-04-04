@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1075706207500363434, guid: 5158edc195f29440587e59287c77a010,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -165,7 +165,7 @@ MonoBehaviour:
   overlap: 0.03
   ground:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1152
   jumpForce: 7
   attackCheck: {fileID: 4857860781826245385}
   attackRange: 0.5
@@ -187,6 +187,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   dir: 0
+  healthbar: {fileID: 0}
+  healthbarFill: {fileID: 0}
 --- !u!60 &567225688
 PolygonCollider2D:
   m_ObjectHideFlags: 0

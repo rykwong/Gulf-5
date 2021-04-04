@@ -26700,7 +26700,7 @@ PrefabInstance:
     - target: {fileID: 4614106066291301939, guid: 28b09d19b523a401b8cced18a64b4769,
         type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28b09d19b523a401b8cced18a64b4769, type: 3}
@@ -30486,7 +30486,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6581818, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
