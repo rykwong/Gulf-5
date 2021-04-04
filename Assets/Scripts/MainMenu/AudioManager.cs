@@ -62,7 +62,7 @@ public class AudioManager : MonoBehaviour
             musicGameOver.Play();
         }
 
-        if (musicMainMenu.isPlaying && !ActiveScene("MainMenu") && !ActiveScene("Settings") && !ActiveScene("TutorialWithTileSet"))
+        if (musicMainMenu.isPlaying && !ActiveScene("MainMenu") && !ActiveScene("Settings") && !ActiveScene("TutorialWithTileSet") && !ActiveScene("Transition") && !ActiveScene("Transition T"))
         {
             musicMainMenu.Stop();
         }

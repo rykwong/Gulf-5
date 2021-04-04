@@ -62,4 +62,10 @@ public class TextDialog : MonoBehaviour
         StartCoroutine(Type());
         
     }
+
+    public void Scroll()
+    {
+        StartCoroutine(Type());
+    }
+    
 }
