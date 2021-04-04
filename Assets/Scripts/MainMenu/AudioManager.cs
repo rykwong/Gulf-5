@@ -39,15 +39,15 @@ public class AudioManager : MonoBehaviour
         {
             // musicMainMenu.Play();
         }
-        else if (!musicLevel1.isPlaying && ActiveScene("Level1BlockOut"))
+        else if (!musicLevel1.isPlaying && ActiveScene("Level1WithTileSET"))
         {
             musicLevel1.Play();
         }
-        else if (!musicLevel2.isPlaying && ActiveScene("Level2BlockOut"))
+        else if (!musicLevel2.isPlaying && ActiveScene("Level2WithTileSET"))
         {
             musicLevel2.Play();
         }
-        else if (!musicLevel3.isPlaying && ActiveScene("Level3BlockOut"))
+        else if (!musicLevel3.isPlaying && ActiveScene("Level3WithTileSET"))
         {
             musicLevel3.Play();
         }
@@ -56,15 +56,15 @@ public class AudioManager : MonoBehaviour
         {
             // musicMainMenu.Stop();
         }
-        else if (musicLevel1.isPlaying && !ActiveScene("Level1BlockOut"))
+        else if (musicLevel1.isPlaying && !ActiveScene("Level1WithTileSET"))
         {
             musicLevel1.Stop();
         }
-        else if (musicLevel2.isPlaying && !ActiveScene("Level2BlockOut"))
+        else if (musicLevel2.isPlaying && !ActiveScene("Level2WithTileSET"))
         {
             musicLevel2.Stop();
         }
-        else if (musicLevel3.isPlaying && !ActiveScene("Level3BlockOut"))
+        else if (musicLevel3.isPlaying && !ActiveScene("Level3WithTileSET"))
         {
             musicLevel3.Stop();
         }

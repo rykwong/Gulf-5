@@ -112,6 +112,11 @@ public class Player : Character
         attack = newAttack;
     }
 
+    public void setFireRate(float newRate)
+    {
+        initTime = newRate;
+    }
+
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);

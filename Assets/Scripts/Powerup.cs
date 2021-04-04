@@ -23,7 +23,10 @@ public class Powerup : MonoBehaviour
             if(stat == "attack")
                 player.GetComponent<Player>().setAttack(powerup[stat]);
             else if(stat == "ranged")
+            {
                 player.GetComponent<Player>().projDamage = powerup[stat];
+                player.GetComponent<Player>().setFireRate(0.5f);
+            }            
             uiPowerUp.SetActive(true);
             Destroy(gameObject);
         }
