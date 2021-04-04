@@ -431,9 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6a1c005fe614d338d4c93177385917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentence: Hope this email finds you well. Hope this email finds you well. Hope
-    this email finds you well. Hope this email finds you well. Hope this email finds
-    you well. Hope this email finds you well.
+  sentence: Hope this email finds you well.
   typingSpeed: 0.05
   button: {fileID: 1730560312}
   transition: 1
@@ -1305,8 +1303,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.298, y: -124.50392}
-  m_SizeDelta: {x: 1440, y: 624.992}
+  m_AnchoredPosition: {x: -4.9616, y: -80}
+  m_SizeDelta: {x: 1434.6729, y: 690.6935}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1894653611
 MonoBehaviour:

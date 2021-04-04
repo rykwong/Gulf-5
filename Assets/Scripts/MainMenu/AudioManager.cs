@@ -53,7 +53,7 @@ public class AudioManager : MonoBehaviour
         {
             musicLevel3.Play();
         }
-        else if (!musicEnding.isPlaying && ActiveScene("EndGameScene"))
+        else if (!musicEnding.isPlaying && ActiveScene("EndGameScreen"))
         {
             musicEnding.Play();
         }
@@ -78,7 +78,7 @@ public class AudioManager : MonoBehaviour
         {
             musicLevel3.Stop();
         }
-        else if (musicEnding.isPlaying && !ActiveScene("EndGameScene") && !ActiveScene("FINAL SCENE"))
+        else if (musicEnding.isPlaying && !ActiveScene("EndGameScreen") && !ActiveScene("FINAL SCENE"))
         {
             musicEnding.Stop();
         }
