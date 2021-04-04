@@ -1413,7 +1413,7 @@ PrefabInstance:
     - target: {fileID: 4614106066291301936, guid: 28b09d19b523a401b8cced18a64b4769,
         type: 3}
       propertyPath: toLevel
-      value: MainMenu
+      value: EndGameScreen
       objectReference: {fileID: 0}
     - target: {fileID: 4614106066291301936, guid: 28b09d19b523a401b8cced18a64b4769,
         type: 3}

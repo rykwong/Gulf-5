@@ -78,7 +78,7 @@ public class AudioManager : MonoBehaviour
         {
             musicLevel3.Stop();
         }
-        else if (musicEnding.isPlaying && !ActiveScene("EndGameScene"))
+        else if (musicEnding.isPlaying && !ActiveScene("EndGameScene") && !ActiveScene("FINAL SCENE"))
         {
             musicEnding.Stop();
         }
