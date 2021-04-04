@@ -7,6 +7,8 @@ public class TutorialManager : MonoBehaviour
     public int popUpIndex;
     public GameObject[] walls;
     public bool[] complete;
+    public GameObject enemy;
+    public GameObject enemy2;
     void Update()
     {
         if (popUpIndex == 0)
@@ -27,5 +29,24 @@ public class TutorialManager : MonoBehaviour
                 walls[popUpIndex].SetActive(false);
             }
         }
+        else if (popUpIndex == 2)
+        {
+            if (!enemy && !complete[popUpIndex])
+            {
+                Debug.Log("Completed Attacking");
+                complete[popUpIndex] = true;
+                walls[popUpIndex].SetActive(false);
+            }
+        }
+        else if (popUpIndex == 3)
+        {
+            if (!enemy2 && !complete[popUpIndex])
+            {
+                Debug.Log("Completed Shooting");
+                complete[popUpIndex] = true;
+                walls[popUpIndex].SetActive(false);
+            }
+        }
+        
     }
 }
