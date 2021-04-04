@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,16 @@ public class Boss : Enemy
     {
         player = GameObject.Find("Player");
         stage = Stage.Stage1;
+    }
+
+    private void Awake()
+    {
+        if (!PlayerPrefs.HasKey("volume"))
+        {
+            PlayerPrefs.SetFloat("volume", 0.5f);
+        }
+
+        AudioListener.volume = PlayerPrefs.GetFloat("volume");
     }
 
     // Update is called once per frame
