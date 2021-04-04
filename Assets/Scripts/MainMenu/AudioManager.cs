@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource musicLevel1 = null;
     [SerializeField] AudioSource musicLevel2 = null;
     [SerializeField] AudioSource musicLevel3 = null;
+    [SerializeField] AudioSource musicEnding = null;
+    [SerializeField] AudioSource musicGameOver = null;
   
     public static AudioManager instance = null;
 
@@ -37,7 +39,7 @@ public class AudioManager : MonoBehaviour
     {
         if (!musicMainMenu.isPlaying && ActiveScene("MainMenu"))
         {
-            // musicMainMenu.Play();
+            musicMainMenu.Play();
         }
         else if (!musicLevel1.isPlaying && ActiveScene("Level1WithTileSET"))
         {
@@ -51,10 +53,18 @@ public class AudioManager : MonoBehaviour
         {
             musicLevel3.Play();
         }
-
-        if (musicMainMenu.isPlaying && !ActiveScene("MainMenu"))
+        else if (!musicEnding.isPlaying && ActiveScene("EndGameScene"))
         {
-            // musicMainMenu.Stop();
+            musicEnding.Play();
+        }
+        else if (!musicGameOver.isPlaying && ActiveScene("GameOver"))
+        {
+            musicGameOver.Play();
+        }
+
+        if (musicMainMenu.isPlaying && !ActiveScene("MainMenu") && !ActiveScene("Settings"))
+        {
+            musicMainMenu.Stop();
         }
         else if (musicLevel1.isPlaying && !ActiveScene("Level1WithTileSET"))
         {
@@ -64,10 +74,19 @@ public class AudioManager : MonoBehaviour
         {
             musicLevel2.Stop();
         }
-        else if (musicLevel3.isPlaying && !ActiveScene("Level3WithTileSet"))
+        else if (musicLevel3.isPlaying && !ActiveScene("Level3WithTileset"))
         {
             musicLevel3.Stop();
         }
+        else if (musicEnding.isPlaying && !ActiveScene("EndGameScene"))
+        {
+            musicEnding.Stop();
+        }
+        else if (musicGameOver.isPlaying && !ActiveScene("GameOver"))
+        {
+            musicGameOver.Stop();
+        }
+        
     }
 
     private bool ActiveScene(string sceneName)
