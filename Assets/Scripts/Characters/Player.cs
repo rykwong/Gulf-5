@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : Character
@@ -12,6 +13,8 @@ public class Player : Character
     public int projDamage = 10;
     [SerializeField] protected LayerMask objectLayers;
     public float dir;
+    [SerializeField] private GameObject healthbar;
+    [SerializeField] private GameObject healthbarFill;
 
     public override void Start()
     {
@@ -107,5 +110,12 @@ public class Player : Character
     public void setAttack(int newAttack)
     {
         attack = newAttack;
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+        healthbar.GetComponent<Slider>().value = (float)health / 100;
+        healthbarFill.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green, (float) health / 100);
     }
 }
