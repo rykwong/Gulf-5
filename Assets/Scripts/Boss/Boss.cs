@@ -17,6 +17,7 @@ public class Boss : Enemy
     [SerializeField] private GameObject shield;
     [SerializeField] private GameObject[] transformers;
     [SerializeField] private GameObject levelExit;
+    [SerializeField] private GameObject win;
 
     private Stage stage;
     private Vector2 aim;
@@ -125,6 +126,7 @@ public class Boss : Enemy
     {
         Debug.Log(gameObject.name + " died!");
         levelExit.GetComponent<Tube>().ToggleLock();
+        win.SetActive(true);
         Destroy(gameObject);
     }
     
