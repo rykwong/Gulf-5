@@ -113,7 +113,7 @@ public class Boss : Enemy
     protected override void Die()
     {
         Debug.Log(gameObject.name + " died!");
-        levelExit.SetActive(true);
+        levelExit.GetComponent<Tube>().ToggleLock();
         Destroy(gameObject);
     }
     

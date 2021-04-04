@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -16,6 +17,7 @@ public class Player : Character
     [SerializeField] private GameObject healthbar;
     [SerializeField] private GameObject healthbarFill;
     private bool invulnerable;
+    private GameObject menuManager;
 
     public override void Start()
     {
@@ -23,6 +25,7 @@ public class Player : Character
         speed = runSpeed;
         attack = attackDamage;
         dir = 1f;
+        menuManager = GameObject.Find("MenuManager");
     }
 
     public override void Update()
@@ -135,5 +138,11 @@ public class Player : Character
         invulnerable = true;
         yield return new WaitForSeconds(1f);
         invulnerable = false;
+    }
+
+    protected override void Die()
+    {
+        base.Die();
+        menuManager.GetComponent<SceneTransitions>().LoadTransition("GameOver");
     }
 }

@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level3WithTileset.unity
     guid: 01504a1b79c924bea97cc3c9b4f4ff0c
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: a0c4680b3561546d8a1bdb8f24e082a1
   m_configObjects: {}

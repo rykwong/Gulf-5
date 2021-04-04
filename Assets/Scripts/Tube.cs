@@ -48,4 +48,10 @@ public class Tube : MonoBehaviour
             triggered = false;
         }
     }
+
+    public void ToggleLock()
+    {
+        unlocked = !unlocked;
+    }
+    
 }
