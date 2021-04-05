@@ -1321,7 +1321,6 @@ GameObject:
   m_Component:
   - component: {fileID: 846400034}
   - component: {fileID: 846400033}
-  - component: {fileID: 846400032}
   m_Layer: 9
   m_Name: Friend
   m_TagString: Player
@@ -1329,25 +1328,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &846400032
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846400031}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 85e26b60b2c544838b1efa24f6671adc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &846400033
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8770,7 +8750,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1875043583}
   - component: {fileID: 1875043585}
-  - component: {fileID: 1875043584}
   m_Layer: 9
   m_Name: Friend
   m_TagString: Player
@@ -8792,25 +8771,6 @@ Transform:
   m_Father: {fileID: 665253433}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1875043584
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875043582}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 85e26b60b2c544838b1efa24f6671adc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &1875043585
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9211,7 +9171,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1971540092}
   - component: {fileID: 1971540094}
-  - component: {fileID: 1971540093}
   m_Layer: 9
   m_Name: Friend
   m_TagString: Player
@@ -9233,25 +9192,6 @@ Transform:
   m_Father: {fileID: 838568276}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1971540093
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1971540091}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 85e26b60b2c544838b1efa24f6671adc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &1971540094
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9344,7 +9284,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2016801434}
   - component: {fileID: 2016801436}
-  - component: {fileID: 2016801435}
   m_Layer: 9
   m_Name: Friend
   m_TagString: Player
@@ -9366,25 +9305,6 @@ Transform:
   m_Father: {fileID: 2032166264}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2016801435
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016801433}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 85e26b60b2c544838b1efa24f6671adc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &2016801436
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9575,7 +9495,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8360482941829084444}
   - component: {fileID: 8360482941829084443}
-  - component: {fileID: 8360482941829084423}
   m_Layer: 9
   m_Name: Friend
   m_TagString: Player
@@ -9583,25 +9502,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &8360482941829084423
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8360482941829084420}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 85e26b60b2c544838b1efa24f6671adc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &8360482941829084443
 SpriteRenderer:
   m_ObjectHideFlags: 0
